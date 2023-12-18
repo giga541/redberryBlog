@@ -1,0 +1,18 @@
+.blog {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.blog-name {
+  font-size: 50px;
+  font-weight: 600;
+  padding-top: 60px;
+  margin-left: 75px;
+}
+
+.img {
+  height: 200px;
+  width: 625px;
+  margin-right: 75px;
+}
