@@ -17,7 +17,6 @@ const Homepage = () => {
       });
   }, []);
 
-  // function fetchCategories() {}
   return (
     <div>
       <Navbar />

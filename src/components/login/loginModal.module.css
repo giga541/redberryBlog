@@ -1,0 +1,67 @@
+.modal_container {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  background-color: #fff;
+  width: 480px;
+  height: 270px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.modal_header {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
+}
+
+.close {
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.modal_content {
+  display: grid;
+  gap: 20px;
+}
+
+.enter_title {
+  display: flex;
+  justify-content: center;
+}
+
+.email {
+  font-weight: bold;
+}
+
+.input {
+  border: 1px solid #5d37f3;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.btn_enter {
+  background-color: #5d37f3;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 40px;
+  border: 1px solid transparent;
+  font-size: 16px;
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f3f2fa;
+  z-index: 1000;
+}
