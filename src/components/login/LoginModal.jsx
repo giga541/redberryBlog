@@ -1,6 +1,6 @@
 import classes from "./loginModal.module.css";
 
-const LoginModal = ({ onOpen, onClose }) => {
+const LoginModal = ({ onOpen, onClose, onLogin }) => {
   if (!onOpen) return null;
 
   return (
@@ -17,7 +17,9 @@ const LoginModal = ({ onOpen, onClose }) => {
             <h1 className={classes["enter_title"]}>შესვლა</h1>
             <p className={classes.email}>ელ-ფოსტა</p>
             <input className={classes.input} type="text" />
-            <button className={classes["btn_enter"]}>შესვლა</button>
+            <button className={classes["btn_enter"]} onClick={onLogin}>
+              შესვლა
+            </button>
           </div>
         </div>
       </div>
