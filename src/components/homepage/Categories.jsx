@@ -22,10 +22,3 @@ const Categories = ({ categories }) => {
 };
 
 export default Categories;
-// backgroundColor: `rgba(${parseInt(
-//   category.background_color.slice(1, 3),
-//   16
-// )}, ${parseInt(
-//   category.background_color.slice(3, 5),
-//   16
-// )}, ${parseInt(category.background_color.slice(5, 7), 16)}, 0.08)`,

@@ -3,9 +3,12 @@ import BLOGLOGO from "../../assets/blog-logo.png";
 import classes from "./homepage.module.css";
 import { useEffect, useState } from "react";
 import Categories from "./Categories";
+import { API_TOKEN, API_URL } from "../../consts";
+import Blog from "./Blog";
 
 const Homepage = () => {
   const [categories, setCategories] = useState([]);
+  const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
     fetch("https://api.blog.redberryinternship.ge/api/categories")
@@ -17,6 +20,21 @@ const Homepage = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetch(`${API_URL}/blogs`, {
+      headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+      },
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setBlogs(data);
+        console.log(data);
+      });
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -25,6 +43,7 @@ const Homepage = () => {
         <img src={BLOGLOGO} alt="" className={classes.img} />
       </div>
       <Categories categories={categories} />
+      <Blog blogs={blogs} />
     </div>
   );
 };
