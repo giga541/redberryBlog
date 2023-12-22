@@ -1,8 +1,18 @@
 .categories {
   display: flex;
   justify-content: center;
-  gap: 20px;
   overflow-y: scroll;
+  gap: 22px;
+  padding-top: 26px;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.categories {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .button {

@@ -10,7 +10,7 @@
 .modal {
   background-color: #fff;
   width: 480px;
-  height: 270px;
+  height: 272px;
   padding: 15px;
   border-radius: 10px;
 }
@@ -19,10 +19,10 @@
   display: flex;
   justify-content: flex-end;
   font-size: 2rem;
+  padding-right: 5px;
 }
 
 .close {
-  padding-right: 5px;
   cursor: pointer;
 }
 
@@ -38,22 +38,29 @@
 
 .email {
   font-weight: bold;
+  padding-left: 9px;
 }
 
 .input {
   border: 1px solid #5d37f3;
   border-radius: 10px;
   height: 40px;
+  padding: 3px;
+  width: 432px;
+  height: 44px;
+  margin-left: 9px;
 }
 
 .btn_enter {
   background-color: #5d37f3;
   color: #fff;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
   height: 40px;
   border: 1px solid transparent;
-  font-size: 16px;
+  font-size: 14px;
+  margin-left: 9px;
+  width: 432px;
 }
 
 .modal_overlay {

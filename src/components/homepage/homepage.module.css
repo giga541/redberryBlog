@@ -5,14 +5,16 @@
 }
 
 .blog-name {
-  font-size: 50px;
-  font-weight: 600;
-  padding-top: 60px;
-  margin-left: 75px;
+  color: #1a1a1f;
+  font-size: 64px;
+  font-weight: 700;
+  padding-top: 78px;
+  margin-left: 89px;
 }
 
 .img {
   height: 200px;
-  width: 625px;
-  margin-right: 75px;
+  width: 624px;
+  margin-right: 26px;
+  padding-top: 14px;
 }
