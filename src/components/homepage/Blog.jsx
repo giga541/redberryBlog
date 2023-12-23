@@ -1,24 +1,28 @@
 import classes from "./blog.module.css";
 
 const Blog = ({ blogs }) => {
-  if (!blogs.data) {
-    console.error("Invalid 'blogs' prop:", blogs);
+  if (!blogs || !blogs.data) {
     return null;
   }
+
+  const categoriesOfBlogs = blogs.data
+    .map(blog => blog.categories)
+    .map(categories => categories.map(category => category.title));
+
   return (
-    <div>
-      <ul>
+    <div className={classes.blog}>
+      <ul className={classes.ul}>
         {blogs.data.map((blog, index) => (
-          <li key={index}>
-            <h1>{blog.title}</h1>
-            <p>{blog.description}</p>
+          <li key={index} className={classes.li}>
             <img src={blog.image} alt="blog_img" className={classes.image} />
-            <p>Publish Date: {blog.publish_date}</p>
-            <p>Author: {blog.author}</p>
-            <h2>Category:</h2>
-            <p>Name: {blog.categories[0].name}</p>
-            <p>Text Color: {blog.categories[0].text_color}</p>
-            <p>Background Color: {blog.categories[0].background_color}</p>
+            <p className={classes.author}> {blog.author}</p>
+            <p className={classes["publish_date"]}>{blog.publish_date}</p>
+            <h1 className={classes.title}>{blog.title}</h1>
+            {/* <h2 className={classes.category}>{categoriesOfBlogs}</h2> */}
+            <p className={classes.description}>
+              {blog.description} description
+            </p>
+            <p className={classes["category_name"]}>სრულად ნახვა</p>
           </li>
         ))}
       </ul>

@@ -1,3 +1,17 @@
+.blog {
+  padding-top: 64px;
+}
+
+.ul {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.li {
+  list-style-type: none;
+}
+
 .image {
   width: 400px;
 }
