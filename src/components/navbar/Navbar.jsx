@@ -48,8 +48,7 @@ const Navbar = () => {
         <LoginModal
           onOpen={isOpen}
           onClose={() => setIsOpen(false)}
-
-          // onLogin={handleLogin}
+          updateButtonLabel={handleLogin}
         />
       </div>
     </div>

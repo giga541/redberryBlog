@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./loginModal.module.css";
 
-const LoginModal = ({ onOpen, onClose, onLogin }) => {
+const LoginModal = ({ onOpen, onClose, updateButtonLabel }) => {
   if (!onOpen) return null;
 
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -12,7 +12,15 @@ const LoginModal = ({ onOpen, onClose, onLogin }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    setEnteredEmail("");
+  };
+
+  const handleLogin = () => {
+    updateButtonLabel(enteredEmail.trim() !== "");
     console.log(enteredEmail);
+
+    onClose();
   };
 
   return (
@@ -31,9 +39,10 @@ const LoginModal = ({ onOpen, onClose, onLogin }) => {
               className={classes.input}
               type="text"
               onChange={handleEmail}
+              value={enteredEmail}
               required
             />
-            <button className={classes["btn_enter"]} onClick={onLogin}>
+            <button className={classes["btn_enter"]} onClick={handleLogin}>
               შესვლა
             </button>
           </div>
