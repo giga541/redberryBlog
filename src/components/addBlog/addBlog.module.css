@@ -21,6 +21,10 @@
 }
 
 .upload_photo {
+  padding-bottom: 8px;
+}
+
+.upload_photo {
   padding-top: 40px;
   color: #1a1a1f;
   font-family: FiraGO;
@@ -30,9 +34,10 @@
 
 .author {
   padding-top: 220px;
+  padding-bottom: 8px;
 }
 
-.input_select_container {
+.input_container {
   display: flex;
   font-size: 14px;
   line-height: 20px;
@@ -41,9 +46,10 @@
 
 .title {
   padding-top: 220px;
+  padding-bottom: 8px;
 }
 
-input {
+.input {
   width: 288px;
   height: 44px;
   border-radius: 12px;
@@ -60,6 +66,7 @@ input {
 
 .validation_desc {
   padding-top: 8px;
+  padding-bottom: 8px;
   color: #85858d;
   font-size: 12px;
 }
@@ -71,7 +78,15 @@ input {
   line-height: 20px;
 }
 
-textarea {
+.select_date_container {
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.textarea {
   margin-top: 8px;
   resize: none;
   width: 600px;
@@ -82,16 +97,41 @@ textarea {
 }
 
 .publish_date {
-  padding-top: 8px;
-  padding-bottom: 8px;
   color: #1a1a1f;
   font-size: 14px;
   line-height: 20px;
+  padding-bottom: 8px;
 }
 
 .category_cont {
-  padding-top: 8px;
+  /* padding-bottom: 8px; */
 }
-select {
-  /* margin-top: 8px; */
+
+.select {
+  margin-top: 8px;
+  width: 288px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid #e4e3eb;
+  background: #fcfcfd;
+}
+
+.mail {
+  margin-bottom: 8px;
+}
+
+.btn_container {
+  padding-left: 312px;
+  padding-top: 40px;
+}
+
+.button {
+  width: 288px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #e4e3eb;
+  border: 1px solid transparent;
+  color: #fff;
+  font-size: 14px;
 }
