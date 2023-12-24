@@ -22,20 +22,6 @@ const Navbar = () => {
     setButtonLabel("დაამატე ბლოგი");
   };
 
-  let ref = useRef();
-  useEffect(() => {
-    const handler = e => {
-      if (!ref.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
-
   return (
     <div className={classes.background}>
       <div className={classes.navbar}>
@@ -44,9 +30,9 @@ const Navbar = () => {
           {buttonLabel}
         </button>
       </div>
-      <div ref={ref}>
+      <div>
         <LoginModal
-          onOpen={isOpen}
+          isOpen={isOpen}
           onClose={() => setIsOpen(false)}
           updateButtonLabel={handleLogin}
         />

@@ -2,4 +2,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
+  position: absolute;
+  left: 76px;
+  top: 120px;
 }
