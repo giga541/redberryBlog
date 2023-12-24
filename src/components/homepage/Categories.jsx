@@ -1,6 +1,6 @@
 import classes from "./categories.module.css";
 
-const Categories = ({ categories }) => {
+const Categories = ({ categories, onClick = () => {} }) => {
   return (
     <div className={classes.categories}>
       {categories.map(category => {
@@ -11,7 +11,11 @@ const Categories = ({ categories }) => {
 
         return (
           <div key={category.id}>
-            <button style={BUTTON_STYLES} className={classes.button}>
+            <button
+              style={BUTTON_STYLES}
+              className={classes.button}
+              onClick={() => onClick(category)}
+            >
               {category.title}
             </button>
           </div>
