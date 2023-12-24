@@ -7,6 +7,16 @@
   transform: translate(-50%, -50%);
 }
 
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(26, 26, 31, 0.24);
+  z-index: 1000;
+}
+
 .modal {
   background-color: #fff;
   width: 480px;
@@ -36,21 +46,6 @@
   justify-content: center;
 }
 
-.email {
-  font-weight: bold;
-  padding-left: 9px;
-}
-
-.input {
-  border: 1px solid #5d37f3;
-  border-radius: 10px;
-  height: 40px;
-  padding: 3px;
-  width: 432px;
-  height: 44px;
-  margin-left: 9px;
-}
-
 .btn_enter {
   background-color: #5d37f3;
   color: #fff;
@@ -61,18 +56,4 @@
   font-size: 14px;
   margin-left: 9px;
   width: 432px;
-}
-
-.modal_overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(26, 26, 31, 0.24);
-  z-index: 1000;
-}
-
-.hidden {
-  display: none;
 }
