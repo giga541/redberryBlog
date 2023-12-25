@@ -9,10 +9,9 @@ import SuccessModal from "../login/SuccessModal";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [buttonLabel, setButtonLabel] = useState("შესვლა");
-
   const { isLoggedIn } = useAuth();
-
   const navigate = useNavigate();
+
   const handleLoginClick = () => {
     if (buttonLabel === "დაამატე ბლოგი") {
       navigate("/AddBlog");
@@ -21,36 +20,28 @@ const Navbar = () => {
     }
   };
 
-  const handleLogin = () => {
+  const handleConfirm = () => {
     setButtonLabel("დაამატე ბლოგი");
+    setIsOpen(false);
   };
 
   return (
     <div className={classes.background}>
       <div className={classes.navbar}>
         <img src={REDBERRYLOGO} alt="redberry-logo" className={classes.img} />
-        {!isLoggedIn ? (
-          <button className={classes.button} onClick={() => setIsOpen(true)}>
-            შესვლა
-          </button>
-        ) : (
-          <button
-            className={classes.button}
-            onClick={() => navigate("/AddBlog")}
-          >
-            დაამატე ბლოგი
-          </button>
-        )}
+        <button className={classes.button} onClick={handleLoginClick}>
+          {buttonLabel}
+        </button>
       </div>
       <div>
         {!isLoggedIn ? (
-          <LoginModal
-            isOpen={isOpen}
-            onClose={() => setIsOpen(false)}
-            updateButtonLabel={handleLogin}
-          />
+          <LoginModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
         ) : (
-          <SuccessModal onClose={() => setIsOpen(false)} isOpen={isOpen} />
+          <SuccessModal
+            onClose={() => setIsOpen(false)}
+            isOpen={isOpen}
+            onConfirm={handleConfirm}
+          />
         )}
       </div>
     </div>

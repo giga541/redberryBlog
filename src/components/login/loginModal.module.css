@@ -18,8 +18,6 @@
 .modal_header {
   display: flex;
   justify-content: flex-end;
-  font-size: 2rem;
-  padding-right: 5px;
 }
 
 .close {
@@ -44,7 +42,6 @@
 .input {
   border: 1px solid #5d37f3;
   border-radius: 10px;
-  height: 40px;
   padding: 3px;
   width: 432px;
   height: 44px;
@@ -75,4 +72,10 @@
 
 .hidden {
   display: none;
+}
+
+.close_btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }

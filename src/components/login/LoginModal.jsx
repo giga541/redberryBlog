@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { API_URL } from "../../consts";
 import { useAuth } from "../../providers/AuthProvider";
 import classes from "./loginModal.module.css";
+import X_LOGO from "../../assets/x_logo.svg";
 
 const LoginModal = ({ isOpen, onClose }) => {
   const { setLoggedIn } = useAuth();
@@ -59,9 +60,9 @@ const LoginModal = ({ isOpen, onClose }) => {
         <div className={classes["modal_container"]} ref={ref}>
           <div className={classes.modal}>
             <div className={classes["modal_header"]}>
-              <span className={classes.close} onClick={onClose}>
-                &times;
-              </span>
+              <button className={classes["close_btn"]} onClick={onClose}>
+                <img src={X_LOGO} alt="x_logo" className={classes.image} />
+              </button>
             </div>
             <div className={classes["modal_content"]}>
               <h1 className={classes["enter_title"]}>შესვლა</h1>
