@@ -6,11 +6,15 @@ import X_LOGO from "../../assets/x_logo.svg";
 
 const LoginModal = ({ isOpen, onClose }) => {
   const { setLoggedIn } = useAuth();
+
   const [enteredEmail, setEnteredEmail] = useState("");
+  const [emailNotFound, setEmailNotFound] = useState(false);
+
   const ref = useRef();
 
   const handleEmail = e => {
     setEnteredEmail(e.target.value);
+    setEmailNotFound(false);
   };
 
   const handleSubmit = e => {
@@ -33,7 +37,7 @@ const LoginModal = ({ isOpen, onClose }) => {
         if (response.status === 204) {
           setLoggedIn(true);
         } else {
-          console.log("ERROR FAILED, SHOULD ADD ERROR");
+          setEmailNotFound(true);
         }
       })
       .catch(e => {
@@ -54,6 +58,8 @@ const LoginModal = ({ isOpen, onClose }) => {
     };
   }, [onClose]);
 
+  const borderStyle = emailNotFound ? { border: "1px solid #EA1919" } : {};
+
   return (
     <form onSubmit={handleSubmit}>
       <div className={isOpen ? classes["modal_overlay"] : classes.hidden}>
@@ -64,19 +70,29 @@ const LoginModal = ({ isOpen, onClose }) => {
                 <img src={X_LOGO} alt="x_logo" className={classes.image} />
               </button>
             </div>
-            <div className={classes["modal_content"]}>
-              <h1 className={classes["enter_title"]}>შესვლა</h1>
-              <p className={classes.email}>ელ-ფოსტა</p>
-              <input
-                className={classes.input}
-                type="text"
-                onChange={handleEmail}
-                value={enteredEmail}
-                required
-              />
-              <button className={classes["btn_enter"]} onClick={handleLogin}>
-                შესვლა
-              </button>
+            <div>
+              <div className={classes["modal_content"]}>
+                <h1 className={classes["enter_title"]}>შესვლა</h1>
+                <p className={classes.email}>ელ-ფოსტა</p>
+                <input
+                  className={classes.input}
+                  style={borderStyle}
+                  type="text"
+                  onChange={handleEmail}
+                  value={enteredEmail}
+                  required
+                />
+                {emailNotFound && (
+                  <span className={classes["mail_validation"]}>
+                    ელ-ფოსტა არ მოიძებნა
+                  </span>
+                )}
+              </div>
+              <div className={classes["btn_cont"]}>
+                <button className={classes["btn_enter"]} onClick={handleLogin}>
+                  შესვლა
+                </button>
+              </div>
             </div>
           </div>
         </div>

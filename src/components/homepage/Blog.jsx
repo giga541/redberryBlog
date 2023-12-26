@@ -1,4 +1,3 @@
-import { useState } from "react";
 import classes from "./blog.module.css";
 import Categories from "./Categories";
 
@@ -18,7 +17,7 @@ const Blog = ({ blogs }) => {
               <p className={classes["publish_date"]}>{blog.publish_date}</p>
               <h1 className={classes.title}>{blog.title}</h1>
               <h2 className={classes["blog_categories"]}>
-                <Categories categories={blog.categories.slice(0, 3)} />
+                <Categories categories={blog.categories} />
               </h2>
               <p className={classes.description}>
                 {blog.description} description
