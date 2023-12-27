@@ -1,14 +1,22 @@
-.blog {
+.blog_container {
+  /* display: flex;
+  justify-content: center;
+  align-items: flex-start; */
+  position: absolute;
+  left: 76px;
+}
+
+.blogs {
   padding-top: 64px;
 }
 
 .ul {
   display: flex;
-  gap: 32px;
   flex-wrap: wrap;
+  /* gap: 32px; */
 }
 
-.li {
+.list {
   list-style-type: none;
   width: 408px;
 }

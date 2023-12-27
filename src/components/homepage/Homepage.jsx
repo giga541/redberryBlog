@@ -38,7 +38,7 @@ const Homepage = () => {
   }, [selectedCategories, blogs]);
 
   useEffect(() => {
-    fetch("https://api.blog.redberryinternship.ge/api/categories")
+    fetch(`${API_URL}/categories`)
       .then(response => {
         return response.json();
       })

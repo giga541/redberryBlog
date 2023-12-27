@@ -30,7 +30,7 @@ const SuccesModal = ({ isOpen, onClose, onConfirm }) => {
         <div className={classes.modal}>
           <div className={classes["modal_header"]}>
             <button className={classes["close_btn"]} onClick={onClose}>
-              <img src={X_LOGO} alt="x_logo" className={classes.image} />
+              <img src={X_LOGO} alt="close-logo" className={classes.image} />
             </button>
             <img
               src={SUCCESS_ICON}
