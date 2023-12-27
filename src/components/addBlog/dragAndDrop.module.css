@@ -41,9 +41,38 @@
   margin-top: 80px;
 }
 
-.uploaded {
+.upload {
   width: 600px;
   height: 56px;
   border-radius: 12px;
   background: #f2f2fa;
+}
+
+.upload_container {
+  display: flex;
+  padding-top: 14px;
+}
+
+.button_image {
+  position: absolute;
+  padding-left: -8px;
+  margin-top: -11px;
+}
+
+.gallery_image {
+  align-self: center;
+  padding-right: 12px;
+  padding-left: 16px;
+}
+
+.gap {
+  display: flex;
+  align-items: center;
+  gap: 424px;
+}
+
+.cancel_button {
+  border: none;
+  cursor: pointer;
+  /* padding-top: 10px; */
 }

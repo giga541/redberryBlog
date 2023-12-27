@@ -2,8 +2,36 @@ import classes from "./addBlog.module.css";
 import REDBERRYLOGO from "../../assets/redberry-logo.png";
 import BackButton from "../button/BackButton";
 import DragAndDrop from "./DragAndDrop";
+import { useState } from "react";
 
 const AddBlog = () => {
+  const [file, setFile] = useState(null);
+
+  const [author, setAuthor] = useState("");
+  const [title, setTitle] = useState("");
+
+  const [titleLength, setTitleLength] = useState(0);
+  const [authorTitleLength, setAuthorTitleLength] = useState(0);
+
+  const [georgianTitle, setGeorgianTitle] = useState("");
+
+  const handleTitle = e => {
+    const newTitle = e.target.value;
+    setTitle(newTitle);
+    setTitleLength(newTitle.length);
+  };
+
+  const handleAuthor = e => {
+    const newAuthor = e.target.value;
+
+    setAuthor(newAuthor);
+    setAuthorTitleLength(newAuthor.length);
+
+    const georgianRegex = /^[ა-ჰ\s]+$/;
+    const isGeorgian = georgianRegex.test(newAuthor);
+    setGeorgianTitle(isGeorgian);
+  };
+
   return (
     <div>
       <div className={classes["image_container"]}>
@@ -16,33 +44,95 @@ const AddBlog = () => {
         <div>
           <h1 className={classes["add_blog"]}>ბლოგის დამატება</h1>
           <p className={classes["upload_photo"]}>ატვირთეთ ფოტო</p>
-          <DragAndDrop />
-          <div className={classes["input_container"]}>
+          <DragAndDrop file={file} setFile={setFile} />
+          <div
+            className={`${classes["input_container"]} ${
+              file ? classes.fileDropped : ""
+            }`}
+          >
             <div>
               <p className={classes.author}>ავტორი *</p>
               <input
-                className={classes.input}
+                className={`${classes.input} ${
+                  authorTitleLength >= 4 && author.length >= 4 && georgianTitle
+                    ? classes["green_outline"]
+                    : authorTitleLength > 0
+                    ? classes["red_outline"]
+                    : ""
+                }`}
                 type="text"
                 placeholder="შეიყვანეთ ავტორი"
+                onChange={handleAuthor}
               />
               <div className={classes.li}>
-                <li>მინიმუმ 4 სიმბოლო </li>
-                <li> მინიმუმ ორი სიტყვა</li>
-                <li>მხოლოდ ქართული სიმბოლოები</li>
+                <li
+                  className={
+                    authorTitleLength >= 4
+                      ? classes.green
+                      : authorTitleLength > 0
+                      ? classes.red
+                      : ""
+                  }
+                >
+                  მინიმუმ 4 სიმბოლო
+                </li>
+                <li
+                  className={
+                    author.length > 0
+                      ? author.trim().split(/\s+/).length >= 2
+                        ? classes.green
+                        : classes.red
+                      : ""
+                  }
+                >
+                  {" "}
+                  მინიმუმ ორი სიტყვა
+                </li>
+                <li
+                  className={
+                    author.length > 0
+                      ? georgianTitle
+                        ? classes.green
+                        : classes.red
+                      : ""
+                  }
+                >
+                  მხოლოდ ქართული სიმბოლოები
+                </li>
               </div>
             </div>
             <div className={classes["title_container"]}>
               <p className={classes.title}>სათაური *</p>
               <input
-                className={classes.input}
+                className={`${classes.input} ${
+                  titleLength >= 2
+                    ? classes["green_outline"]
+                    : titleLength > 0
+                    ? classes["red_outline"]
+                    : ""
+                }`}
                 type="text"
                 placeholder="შეიყვანეთ სათაური"
+                onChange={handleTitle}
               />
-              <p className={classes["validation_desc"]}>მინიმუმ 2 სიმბოლო </p>
+              <p
+                className={`${classes["validation_desc"]} ${
+                  titleLength >= 2
+                    ? classes.green
+                    : titleLength > 0
+                    ? classes.red
+                    : ""
+                }`}
+              >
+                მინიმუმ 2 სიმბოლო
+              </p>
             </div>
           </div>
           <p className={classes.description}>აღწერა *</p>
-          <textarea className={classes.textarea}></textarea>
+          <textarea
+            className={classes.textarea}
+            placeholder="შეიყვანეთ აღწერა"
+          ></textarea>
           <p className={classes["validation_desc"]}>მინიმუმ 2 სიმბოლო </p>
           <div className={classes["select_date_container"]}>
             <div>

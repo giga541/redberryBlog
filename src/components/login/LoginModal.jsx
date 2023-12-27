@@ -82,7 +82,6 @@ const LoginModal = ({ isOpen, onClose }) => {
                   value={enteredEmail}
                   required
                 />
-
                 <span
                   className={`${classes["mail_validation"]} ${
                     !emailNotFound ? classes.hiddenValidation : ""

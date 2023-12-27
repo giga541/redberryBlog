@@ -1,11 +1,10 @@
 import classes from "./dragAndDrop.module.css";
 import FOLDER_ICON from "../../assets/folder-add.png";
 import X_LOGO from "../../assets/x_logo.svg";
-import { useState } from "react";
+import GALERRY_ICON from "../../assets/gallery.png";
 import { useRef } from "react";
 
-const DragAndDrop = () => {
-  const [file, setFile] = useState(null);
+const DragAndDrop = ({ file, setFile }) => {
   const inputRef = useRef();
 
   const handleDragOver = e => {
@@ -16,15 +15,32 @@ const DragAndDrop = () => {
     e.preventDefault();
     setFile(e.dataTransfer.files[0]);
   };
-  console.log(file);
 
   if (file)
     return (
-      <div className={classes.uploaded}>
-        <div>{file.name}</div>
-        <button>
-          <img src={X_LOGO} alt="close-logo" />
-        </button>
+      <div className={classes.upload}>
+        <div className={classes["upload_container"]}>
+          <img
+            src={GALERRY_ICON}
+            alt="gallery-icon"
+            className={classes["gallery_image"]}
+          />
+          <div className={classes.gap}>
+            <div className={classes.name}>{file.name}</div>
+            <button
+              className={classes["cancel_button"]}
+              onClick={() => {
+                setFile(null);
+              }}
+            >
+              <img
+                src={X_LOGO}
+                alt="close-logo"
+                className={classes["button_image"]}
+              />
+            </button>
+          </div>
+        </div>
       </div>
     );
 
