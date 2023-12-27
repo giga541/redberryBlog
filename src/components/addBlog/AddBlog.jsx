@@ -9,26 +9,20 @@ const AddBlog = () => {
 
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
-
-  const [titleLength, setTitleLength] = useState(0);
-  const [authorTitleLength, setAuthorTitleLength] = useState(0);
+  const [description, setDescription] = useState("");
+  const [email, setEmail] = useState("");
 
   const [georgianTitle, setGeorgianTitle] = useState("");
 
   const handleTitle = e => {
-    const newTitle = e.target.value;
-    setTitle(newTitle);
-    setTitleLength(newTitle.length);
+    setTitle(e.target.value);
   };
 
   const handleAuthor = e => {
-    const newAuthor = e.target.value;
-
-    setAuthor(newAuthor);
-    setAuthorTitleLength(newAuthor.length);
+    setAuthor(e.target.value);
 
     const georgianRegex = /^[ა-ჰ\s]+$/;
-    const isGeorgian = georgianRegex.test(newAuthor);
+    const isGeorgian = georgianRegex.test(author);
     setGeorgianTitle(isGeorgian);
   };
 
@@ -54,9 +48,11 @@ const AddBlog = () => {
               <p className={classes.author}>ავტორი *</p>
               <input
                 className={`${classes.input} ${
-                  authorTitleLength >= 4 && author.length >= 4 && georgianTitle
+                  author.trim().length >= 4 &&
+                  author.trim().split(/\s+/).length >= 2 &&
+                  georgianTitle
                     ? classes["green_outline"]
-                    : authorTitleLength > 0
+                    : author.trim().length > 0
                     ? classes["red_outline"]
                     : ""
                 }`}
@@ -67,9 +63,9 @@ const AddBlog = () => {
               <div className={classes.li}>
                 <li
                   className={
-                    authorTitleLength >= 4
+                    author.trim().length >= 4
                       ? classes.green
-                      : authorTitleLength > 0
+                      : author.trim().length > 0
                       ? classes.red
                       : ""
                   }
@@ -85,7 +81,6 @@ const AddBlog = () => {
                       : ""
                   }
                 >
-                  {" "}
                   მინიმუმ ორი სიტყვა
                 </li>
                 <li
@@ -105,9 +100,9 @@ const AddBlog = () => {
               <p className={classes.title}>სათაური *</p>
               <input
                 className={`${classes.input} ${
-                  titleLength >= 2
+                  title.trim().length >= 2
                     ? classes["green_outline"]
-                    : titleLength > 0
+                    : title.trim().length > 0
                     ? classes["red_outline"]
                     : ""
                 }`}
@@ -117,9 +112,9 @@ const AddBlog = () => {
               />
               <p
                 className={`${classes["validation_desc"]} ${
-                  titleLength >= 2
+                  title.trim().length >= 2
                     ? classes.green
-                    : titleLength > 0
+                    : title.trim().length > 0
                     ? classes.red
                     : ""
                 }`}
