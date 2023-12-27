@@ -56,6 +56,10 @@
   outline: none;
 }
 
+.hiddenValidation {
+  visibility: hidden;
+}
+
 .mail_validation {
   color: #ea1919;
   font-size: 12px;

@@ -82,11 +82,14 @@ const LoginModal = ({ isOpen, onClose }) => {
                   value={enteredEmail}
                   required
                 />
-                {emailNotFound && (
-                  <span className={classes["mail_validation"]}>
-                    ელ-ფოსტა არ მოიძებნა
-                  </span>
-                )}
+
+                <span
+                  className={`${classes["mail_validation"]} ${
+                    !emailNotFound ? classes.hiddenValidation : ""
+                  }`}
+                >
+                  ელ-ფოსტა არ მოიძებნა
+                </span>
               </div>
               <div className={classes["btn_cont"]}>
                 <button className={classes["btn_enter"]} onClick={handleLogin}>
