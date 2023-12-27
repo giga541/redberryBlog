@@ -27,7 +27,6 @@
 .upload_photo {
   padding-top: 40px;
   color: #1a1a1f;
-  font-family: FiraGO;
   font-size: 14px;
   line-height: 20px;
 }
@@ -101,10 +100,6 @@
   font-size: 14px;
   line-height: 20px;
   padding-bottom: 8px;
-}
-
-.category_cont {
-  /* padding-bottom: 8px; */
 }
 
 .select {

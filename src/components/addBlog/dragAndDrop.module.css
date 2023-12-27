@@ -1,0 +1,49 @@
+.drop_container {
+  display: flex;
+  justify-content: center;
+  border: 1px dashed #85858d;
+  background: #f4f3ff;
+  width: 600px;
+  height: 180px;
+  border-radius: 12px;
+}
+
+.image {
+  position: absolute;
+  top: 276px;
+  width: 40px;
+  height: 40px;
+}
+
+.select_file_container {
+  display: flex;
+  padding-top: 32px;
+}
+
+.drop_file {
+  color: #1a1a1f;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding-top: 80px;
+  padding-right: 5px;
+}
+
+.button {
+  color: #1a1a1f;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration-line: underline;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  height: 0px;
+  margin-top: 80px;
+}
+
+.uploaded {
+  width: 600px;
+  height: 56px;
+  border-radius: 12px;
+  background: #f2f2fa;
+}

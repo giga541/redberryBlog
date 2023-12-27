@@ -1,10 +1,11 @@
 import classes from "./addBlog.module.css";
 import REDBERRYLOGO from "../../assets/redberry-logo.png";
 import BackButton from "../button/BackButton";
+import DragAndDrop from "./DragAndDrop";
 
 const AddBlog = () => {
   return (
-    <form>
+    <div>
       <div className={classes["image_container"]}>
         <img src={REDBERRYLOGO} alt="redberry-logo" />
       </div>
@@ -15,7 +16,7 @@ const AddBlog = () => {
         <div>
           <h1 className={classes["add_blog"]}>ბლოგის დამატება</h1>
           <p className={classes["upload_photo"]}>ატვირთეთ ფოტო</p>
-          <div>DragAndDropComponent</div>
+          <DragAndDrop />
           <div className={classes["input_container"]}>
             <div>
               <p className={classes.author}>ავტორი *</p>
@@ -64,7 +65,7 @@ const AddBlog = () => {
           </div>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 
