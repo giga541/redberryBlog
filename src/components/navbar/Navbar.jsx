@@ -4,7 +4,7 @@ import LoginModal from "../login/LoginModal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../providers/AuthProvider";
-import SuccessModal from "../login/SuccessModal";
+import SuccessModal from "../success/SuccessModal";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +41,8 @@ const Navbar = () => {
             onClose={() => setIsOpen(false)}
             isOpen={isOpen}
             onConfirm={handleConfirm}
+            success="წარმატებული ავტორიზაცია"
+            ok="კარგი"
           />
         )}
       </div>

@@ -3,7 +3,7 @@ import SUCCESS_ICON from "../../assets/tick-circle.svg";
 import X_LOGO from "../../assets/x_logo.svg";
 import { useEffect, useRef } from "react";
 
-const SuccesModal = ({ isOpen, onClose, onConfirm }) => {
+const SuccesModal = ({ isOpen, onClose, onConfirm, success, ok }) => {
   if (!isOpen) return null;
   const ref = useRef();
 
@@ -39,13 +39,11 @@ const SuccesModal = ({ isOpen, onClose, onConfirm }) => {
             />
           </div>
           <div className={classes["modal_content"]}>
-            <h1 className={classes["success_title"]}>
-              წარმატებული ავტორიზაცია
-            </h1>
+            <h1 className={classes["success_title"]}>{success}</h1>
           </div>
           <div className={classes["btn_cont"]}>
             <button className={classes["btn_ok"]} onClick={handleBtnClick}>
-              კარგი
+              {ok}
             </button>
           </div>
         </div>
