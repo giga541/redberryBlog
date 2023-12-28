@@ -11,7 +11,7 @@
   background-color: #fff;
   width: 480px;
   height: 272px;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
 }
 
@@ -35,7 +35,7 @@
 
 .email {
   font-weight: bold;
-  padding-left: 9px;
+  padding-left: 4px;
   padding-bottom: 8px;
 }
 
@@ -49,21 +49,21 @@
   padding: 3px;
   width: 432px;
   height: 44px;
-  margin-left: 9px;
+  margin-left: 4px;
 }
 
 .input:focus {
   outline: none;
 }
 
-.hiddenValidation {
+.hidden_validation {
   visibility: hidden;
 }
 
 .mail_validation {
   color: #ea1919;
   font-size: 12px;
-  padding-left: 9px;
+  padding-left: 4px;
 }
 
 .btn_cont {
@@ -78,7 +78,7 @@
   height: 40px;
   border: 1px solid transparent;
   font-size: 14px;
-  margin-left: 9px;
+  margin-left: 4px;
   width: 432px;
 }
 

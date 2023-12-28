@@ -84,7 +84,7 @@ const LoginModal = ({ isOpen, onClose }) => {
                 />
                 <span
                   className={`${classes["mail_validation"]} ${
-                    !emailNotFound ? classes.hiddenValidation : ""
+                    !emailNotFound ? classes["hidden_validation"] : ""
                   }`}
                 >
                   ელ-ფოსტა არ მოიძებნა

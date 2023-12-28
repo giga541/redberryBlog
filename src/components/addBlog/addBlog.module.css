@@ -74,24 +74,6 @@
   font-size: 12px;
 }
 
-.green {
-  color: #14d81c;
-}
-
-.red {
-  color: #ea1919;
-}
-
-.red_outline {
-  border: 1px solid #ea1919;
-  background: #faf2f3;
-}
-
-.green_outline {
-  border: 1px solid #14d81c;
-  background: #f8fff8;
-}
-
 .description {
   padding-top: 24px;
   color: #1a1a1f;
@@ -117,6 +99,25 @@
   background: #fcfcfd;
   padding-top: 12px;
   padding-left: 16px;
+  outline: none;
+}
+
+.green {
+  color: #14d81c;
+}
+
+.red {
+  color: #ea1919;
+}
+
+.red_outline {
+  border: 1px solid #ea1919;
+  background: #faf2f3;
+}
+
+.green_outline {
+  border: 1px solid #14d81c;
+  background: #f8fff8;
 }
 
 .publish_date {
@@ -137,6 +138,31 @@
 
 .mail {
   margin-bottom: 8px;
+  font-size: 14px;
+  color: #1a1a1f;
+}
+
+.validation_container {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.hidden_validation {
+  visibility: hidden;
+}
+
+.mail_image {
+}
+
+.mail_validation {
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+.span {
+  font-size: 12px;
+  padding-left: 28px;
 }
 
 .btn_container {
@@ -153,8 +179,4 @@
   border: 1px solid transparent;
   color: #fff;
   font-size: 14px;
-}
-
-.test {
-  padding-top: 50px;
 }
