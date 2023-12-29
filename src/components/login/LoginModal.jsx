@@ -80,7 +80,6 @@ const LoginModal = ({ isOpen, onClose }) => {
                   type="text"
                   onChange={handleEmail}
                   value={enteredEmail}
-                  required
                 />
                 <span
                   className={`${classes["mail_validation"]} ${

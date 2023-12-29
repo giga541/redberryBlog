@@ -34,7 +34,7 @@ const AddBlog = () => {
   };
 
   const isValidEmail = emailCheck => {
-    return emailCheck.includes("@redberry.ge");
+    return emailCheck.endsWith("@redberry.ge");
   };
   const handleEmail = e => {
     const newEmail = e.target.value;
