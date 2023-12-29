@@ -4,8 +4,8 @@ import classes from "./homepage.module.css";
 import { useEffect, useState } from "react";
 import Categories from "./Categories";
 import { API_TOKEN, API_URL } from "../../consts";
-import Blog from "./Blog";
 import { useMemo } from "react";
+import BlogInfo from "./BlogInfo";
 
 const Homepage = () => {
   const [categories, setCategories] = useState([]);
@@ -70,7 +70,7 @@ const Homepage = () => {
         <img src={BLOGLOGO} alt="" className={classes.img} />
       </div>
       <Categories categories={categories} onClick={selectCategory} />
-      <Blog blogs={filteredBlogs} />
+      <BlogInfo blogs={filteredBlogs} />
     </div>
   );
 };

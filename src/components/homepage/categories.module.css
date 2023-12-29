@@ -1,6 +1,7 @@
 .categories {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  align-self: center;
   overflow-x: auto;
   overflow-y: auto;
   gap: 24px;

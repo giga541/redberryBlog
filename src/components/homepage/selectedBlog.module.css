@@ -1,0 +1,40 @@
+.blog_container {
+  display: grid;
+  justify-content: center;
+}
+
+.image {
+  width: 720px;
+  height: 328px;
+  border-radius: 12px;
+  padding-top: 40px;
+}
+
+.author {
+  padding-top: 40px;
+  color: #1a1a1f;
+  font-size: 16px;
+}
+
+.publish_date {
+  padding-top: 8px;
+  color: #85858d;
+  font-size: 12px;
+}
+
+.title {
+  padding-top: 24px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.blog_categories {
+  padding-top: 24px;
+}
+
+.description {
+  padding-top: 40px;
+  color: #404049;
+  font-size: 16px;
+  width: 720px;
+}
