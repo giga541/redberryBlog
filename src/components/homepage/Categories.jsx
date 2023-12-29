@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./categories.module.css";
 
-const Categories = ({ categories, onClick = () => {} }) => {
+const Categories = ({ categories, onClick = () => {}, isHomePage, isSelectable }) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   const handleButtonClick = category => {
@@ -10,13 +10,15 @@ const Categories = ({ categories, onClick = () => {} }) => {
       ? selectedCategories.filter(id => id !== category.id)
       : [...selectedCategories, category.id];
 
-    setSelectedCategories(newSelectedCategories);
+    if (isSelectable) {
+      setSelectedCategories(newSelectedCategories);
+    }
     onClick(category);
   };
 
   return (
-    <div className={classes.categories}>
-      {categories.map(category => {
+    <div className={`${classes.categories} ${isHomePage ? classes.centered : ''}`}>
+      {categories?.map(category => {
         const isSelected = selectedCategories.includes(category.id);
 
         const BUTTON_STYLES = {

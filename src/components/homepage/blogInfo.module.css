@@ -7,13 +7,10 @@
 
 .ul {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-}
-
-.li_container {
-  width: 408px;
-  flex-basis: calc(25% - 35.75px);
+  width: 1288px;
+  gap: 32px;
+  margin: 0 auto;
 }
 
 .list {
@@ -24,6 +21,8 @@
 .image {
   width: 408px;
   height: 328px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .author {

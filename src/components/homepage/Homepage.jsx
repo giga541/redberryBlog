@@ -69,7 +69,7 @@ const Homepage = () => {
         <div className={classes["blog-name"]}>ბლოგი</div>
         <img src={BLOGLOGO} alt="" className={classes.img} />
       </div>
-      <Categories categories={categories} onClick={selectCategory} />
+      <Categories categories={categories} onClick={selectCategory} isHomePage isSelectable />
       <BlogInfo blogs={filteredBlogs} />
     </div>
   );

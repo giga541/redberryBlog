@@ -7,6 +7,11 @@
   gap: 24px;
 }
 
+.centered {
+  width: 684px;
+  margin: 0 auto;
+}
+
 .categories::-webkit-scrollbar {
   display: none;
 }
