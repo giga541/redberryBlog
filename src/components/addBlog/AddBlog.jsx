@@ -3,9 +3,11 @@ import REDBERRY_LOGO from "../../assets/redberry-logo.png";
 import INFO_CIRCLE from "../../assets/info-circle.svg";
 import BackButton from "../button/BackButton";
 import DragAndDrop from "./DragAndDrop";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SelectCategories from "./SelectCategories";
 import { API_URL, API_TOKEN } from "../../consts";
+import SuccessModal from "../success/SuccessModal";
+import { useNavigate } from "react-router-dom";
 
 const AddBlog = () => {
   const [file, setFile] = useState(null);
@@ -17,8 +19,22 @@ const AddBlog = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [georgianTitle, setGeorgianTitle] = useState("");
+  const [successModalVisible, setSuccessModalVisible] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
+    if (
+      author.trim().length < 4 ||
+      author.trim().split(/\s+/).length < 2 ||
+      !georgianTitle ||
+      title.trim().length < 2 ||
+      description.trim().length < 2 ||
+      !date
+    ) {
+      console.log("Validation failed. Please check your inputs.");
+      return;
+    }
     console.log({
       author,
       title,
@@ -34,7 +50,7 @@ const AddBlog = () => {
     formData.append("image", file);
     formData.append("author", author);
     formData.append("publish_date", date);
-    formData.append("categories");
+    formData.append("categories", ["1"]);
     formData.append("email", email);
 
     fetch(`${API_URL}/blogs`, {
@@ -47,6 +63,7 @@ const AddBlog = () => {
     })
       .then(response => {
         console.log(response);
+        setSuccessModalVisible(true);
       })
       .catch(e => {
         console.log("Error while adding a blog");
@@ -268,6 +285,17 @@ const AddBlog = () => {
             <button className={classes.button} onClick={handleSubmit}>
               გამოქვეყნება
             </button>
+
+            <SuccessModal
+              isOpen={successModalVisible}
+              onClose={() => setSuccessModalVisible(false)}
+              onConfirm={() => {
+                setSuccessModalVisible(false);
+                navigate("/");
+              }}
+              success="ჩანაწი წარმატებით დაემატა"
+              ok="მთავარ გვერდზე დაბრუნება"
+            />
           </div>
         </div>
       </div>

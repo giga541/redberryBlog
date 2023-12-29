@@ -42,12 +42,12 @@ const SelectCategories = () => {
       });
   };
 
-  const colorStyles = {
-    control: styles => ({ ...styles, backgroundColor: "#f8fff8" }),
-    option: (styles, { data }) => {
-      return { ...styles, color: data.text_color };
-    },
-  };
+  // const colorStyles = {
+  //   control: styles => ({ ...styles, backgroundColor: "#f8fff8" }),
+  //   option: (styles, { data }) => {
+  //     return { ...styles, color: data.text_color };
+  //   },
+  // };
 
   return (
     <div className={classes.test}>
@@ -56,7 +56,7 @@ const SelectCategories = () => {
         defaultOptions
         onChange={handleChange}
         isMulti
-        styles={colorStyles}
+        // styles={colorStyles}
         className={classes["sync_select"]}
       />
     </div>

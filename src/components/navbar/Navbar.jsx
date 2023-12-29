@@ -41,6 +41,8 @@ const Navbar = () => {
             onClose={() => setIsOpen(false)}
             isOpen={isOpen}
             onConfirm={handleConfirm}
+            success="წარმატებული ავტორიზაცია"
+            ok="კარგი"
           />
         )}
       </div>
