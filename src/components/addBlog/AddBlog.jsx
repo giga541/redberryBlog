@@ -50,7 +50,7 @@ const AddBlog = () => {
     formData.append("image", file);
     formData.append("author", author);
     formData.append("publish_date", date);
-    formData.append("categories", ["1"]);
+    formData.append("categories", "[1]");
     formData.append("email", email);
 
     fetch(`${API_URL}/blogs`, {
