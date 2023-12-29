@@ -282,7 +282,22 @@ const AddBlog = () => {
             )}
           </div>
           <div className={classes["btn_container"]}>
-            <button className={classes.button} onClick={handleSubmit}>
+            <button
+              className={classes.button}
+              onClick={handleSubmit}
+              style={{
+                background:
+                  author.trim().length >= 4 &&
+                  author.trim().split(/\s+/).length >= 2 &&
+                  georgianTitle &&
+                  title.trim().length >= 2 &&
+                  description.trim().length >= 2 &&
+                  date &&
+                  file
+                    ? "#5d37f3"
+                    : "#E4E3EB",
+              }}
+            >
               გამოქვეყნება
             </button>
 
