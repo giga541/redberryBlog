@@ -3,6 +3,7 @@ import { API_URL } from "../../consts";
 import { useAuth } from "../../providers/AuthProvider";
 import classes from "./loginModal.module.css";
 import X_LOGO from "../../assets/x_logo.svg";
+import ERROR_ICON from "../../assets/info-circle.svg"
 
 const LoginModal = ({ isOpen, onClose }) => {
   const { setLoggedIn } = useAuth();
@@ -19,7 +20,8 @@ const LoginModal = ({ isOpen, onClose }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setEnteredEmail("");
+    console.log('asdas')
+    // setEnteredEmail("");
   };
 
   const handleLogin = () => {
@@ -81,13 +83,18 @@ const LoginModal = ({ isOpen, onClose }) => {
                   onChange={handleEmail}
                   value={enteredEmail}
                 />
-                <span
-                  className={`${classes["mail_validation"]} ${
-                    !emailNotFound ? classes["hidden_validation"] : ""
-                  }`}
-                >
-                  ელ-ფოსტა არ მოიძებნა
-                </span>
+                <div className={`${
+                  !emailNotFound ? classes["hidden_validation"] : ""
+                }`}>
+                  <span>
+                    <img src={ERROR_ICON} />
+                  </span>
+                  <span
+                    className={`${classes["mail_validation"]}`}
+                  >
+                    ელ-ფოსტა არ მოიძებნა
+                  </span>
+                </div>
               </div>
               <div className={classes["btn_cont"]}>
                 <button className={classes["btn_enter"]} onClick={handleLogin}>

@@ -10,6 +10,7 @@
 .centered {
   width: 684px;
   margin: 0 auto;
+  padding: 2px;
 }
 
 .categories::-webkit-scrollbar {

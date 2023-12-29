@@ -24,7 +24,8 @@ const Categories = ({ categories, onClick = () => {}, isHomePage, isSelectable }
         const BUTTON_STYLES = {
           backgroundColor: category.background_color,
           color: category.text_color,
-          border: isSelected ? "1px solid #000" : "none",
+          border: "none",
+          outline: isSelected ? "1px solid black" : "none"
         };
 
         return (

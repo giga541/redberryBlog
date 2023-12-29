@@ -7,7 +7,8 @@
   width: 720px;
   height: 328px;
   border-radius: 12px;
-  padding-top: 40px;
+  margin-top: 40px;
+  object-fit: cover;
 }
 
 .author {
@@ -30,6 +31,7 @@
 
 .blog_categories {
   padding-top: 24px;
+  width: 700px;
 }
 
 .description {
@@ -37,4 +39,27 @@
   color: #404049;
   font-size: 16px;
   width: 720px;
+}
+
+.similar-blogs-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 98px;
+}
+
+.similar-blogs-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-right {
+  margin-left: 24px;
+}
+
+.similar-blogs-list {
+  display: flex;
+  gap: 32px;
+  margin: 0 auto;
+  width: 1288px;
+  margin-top: 38px;
 }
