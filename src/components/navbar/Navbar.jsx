@@ -12,15 +12,16 @@ const Navbar = () => {
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
-  // const handleLoginClick = () => {
-  //   if (buttonLabel === "დაამატე ბლოგი") {
-  //     navigate("/AddBlog");
-  //   } else {
-  //     setIsOpen(true);
-  //   }
-  // };
+  const handleLoginClick = () => {
+    if (buttonLabel === "დაამატე ბლოგი") {
+      navigate("/AddBlog");
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   const handleConfirm = () => {
+    setButtonLabel("დაამატე ბლოგი");
     setIsOpen(false);
   };
 
@@ -28,13 +29,9 @@ const Navbar = () => {
     <div className={classes.background}>
       <div className={classes.navbar}>
         <img src={REDBERRYLOGO} alt="redberry-logo" className={classes.img} />
-        { isLoggedIn ? <button className={classes.button} onClick={() => navigate("/AddBlog")}>
-          დაამატე ბლოგი
-        </button> : 
-          <button className={classes.button} onClick={() => setIsOpen(true)}>
-          შესვლა
+        <button className={classes.button} onClick={handleLoginClick}>
+          {buttonLabel}
         </button>
-        }
       </div>
       <div>
         {!isLoggedIn ? (
@@ -44,8 +41,6 @@ const Navbar = () => {
             onClose={() => setIsOpen(false)}
             isOpen={isOpen}
             onConfirm={handleConfirm}
-            success="წარმატებული ავტორიზაცია"
-            ok="კარგი"
           />
         )}
       </div>

@@ -5,7 +5,7 @@ import BackButton from "../button/BackButton";
 import DragAndDrop from "./DragAndDrop";
 import { useState, useEffect } from "react";
 import SelectCategories from "./SelectCategories";
-import {API_URL, API_TOKEN} from '../../consts'
+import { API_URL, API_TOKEN } from "../../consts";
 
 const AddBlog = () => {
   const [file, setFile] = useState(null);
@@ -25,35 +25,34 @@ const AddBlog = () => {
       description,
       date,
       email,
-      file
-    })
-    const formData = new FormData()
+      file,
+    });
+    const formData = new FormData();
 
-    formData.append('title', title)
-    formData.append('description', description)
-    formData.append('image', file)
-    formData.append('author', author)
-    formData.append('publish_date', date)
-    formData.append('categories', '[1]')
-    formData.append('email', email)
-
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("image", file);
+    formData.append("author", author);
+    formData.append("publish_date", date);
+    formData.append("categories");
+    formData.append("email", email);
 
     fetch(`${API_URL}/blogs`, {
-      method: 'POST',
+      method: "POST",
       headers: {
         Authorization: `Bearer ${API_TOKEN}`,
-        accept: 'application/json'
+        accept: "application/json",
       },
-      body: formData
+      body: formData,
     })
-    .then(response => {
-      console.log(response)
-    })
-    .catch(e => {
-      console.log('Error while adding a blog')
-      console.log(e)
-    })
-  }
+      .then(response => {
+        console.log(response);
+      })
+      .catch(e => {
+        console.log("Error while adding a blog");
+        console.log(e);
+      });
+  };
 
   const handleTitle = e => {
     setTitle(e.target.value);
@@ -71,9 +70,9 @@ const AddBlog = () => {
     setDescription(e.target.value);
   };
 
-  const handleDateChange = (e) => {
-    setDate(e.target.value)
-  }
+  const handleDateChange = e => {
+    setDate(e.target.value);
+  };
 
   const isValidEmail = emailCheck => {
     return emailCheck.endsWith("@redberry.ge");
@@ -215,11 +214,13 @@ const AddBlog = () => {
           <div className={classes["select_date_container"]}>
             <div>
               <p className={classes["publish_date"]}>გამოქვეყნების თარიღი *</p>
-              <input className={classes.input} type="date" onChange={handleDateChange}/>
+              <input
+                className={classes.input}
+                type="date"
+                onChange={handleDateChange}
+              />
             </div>
             <div className={classes["category_cont"]}>
-              {/* <p className={classes.category}>კატეგორია</p>
-              <select name="" id="" className={classes.select}></select> */}
               <SelectCategories />
             </div>
           </div>
@@ -264,7 +265,9 @@ const AddBlog = () => {
             )}
           </div>
           <div className={classes["btn_container"]}>
-            <button className={classes.button} onClick={handleSubmit}>გამოქვეყნება</button>
+            <button className={classes.button} onClick={handleSubmit}>
+              გამოქვეყნება
+            </button>
           </div>
         </div>
       </div>

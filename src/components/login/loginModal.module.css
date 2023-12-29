@@ -59,16 +59,25 @@
 
 .hidden_validation {
   visibility: hidden;
+  padding-top: 8px;
+}
+
+.mail_error {
+  padding-top: 4px;
+}
+
+.error_icon {
+  position: absolute;
+}
+
+.btn_cont {
+  padding-top: 4px;
 }
 
 .mail_validation {
   color: #ea1919;
   font-size: 12px;
-  padding-left: 4px;
-}
-
-.btn_cont {
-  padding-top: 5px;
+  padding-left: 27px;
 }
 
 .btn_enter {

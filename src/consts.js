@@ -1,4 +1,4 @@
 export const API_TOKEN =
-  "09275009b318569028b5fecf54e4ab40768269c6cee235bc9546be67f1f5609a";
+  "ee4aa6f42cb64a4d063f84b5d1dec60c6120ae0a1f40fa13f66d0ad8c175e84f";
 
 export const API_URL = "https://api.blog.redberryinternship.ge/api";

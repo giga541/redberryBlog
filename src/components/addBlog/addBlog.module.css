@@ -174,10 +174,10 @@
 .button {
   width: 288px;
   padding: 10px 20px;
-  border-radius: 8px;
   cursor: pointer;
-  background: #e4e3eb;
   border: 1px solid transparent;
   color: #fff;
   font-size: 14px;
+  border-radius: 8px;
+  background: #5d37f3;
 }
